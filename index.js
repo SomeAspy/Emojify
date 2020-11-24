@@ -9,7 +9,7 @@ module.exports = class Emojify extends Plugin {
       executor: (args) => ({
         //var args = "test one two THREE 98778"
 args = args.split("")
-console.log(args)
+//console.log(args)
 var output = ""
 args.forEach(char => {
     if(char == "1") {
