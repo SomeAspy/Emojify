@@ -1,11 +1,11 @@
 const { Plugin } = require('powercord/entities');
 
-module.exports = class Mock extends Plugin {
+module.exports = class Emojify extends Plugin {
   startPlugin () {
     powercord.api.commands.registerCommand({
-      command: 'mock',
-      description: 'Mock a user...',
-      usage: '{c} [text to mock]',
+      command: 'emojify',
+      description: 'Emojify Text',
+      usage: '{c} [text to emojify]',
       executor: (args) => ({
         //var args = "test one two THREE 98778"
 args = args.split("")
@@ -55,6 +55,6 @@ args.forEach(char => {
   }
 
   pluginWillUnload () {
-    powercord.api.commands.unregisterCommand('mock');
+    powercord.api.commands.unregisterCommand('emojify');
   }
 };
