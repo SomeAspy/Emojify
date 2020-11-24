@@ -1,8 +1,17 @@
-var args = "test one two THREE 98778"
+const { Plugin } = require('powercord/entities');
+
+module.exports = class Mock extends Plugin {
+  startPlugin () {
+    powercord.api.commands.registerCommand({
+      command: 'mock',
+      description: 'Mock a user...',
+      usage: '{c} [text to mock]',
+      executor: (args) => ({
+        //var args = "test one two THREE 98778"
 args = args.split("")
 console.log(args)
 var output = ""
-str.forEach(char => {
+args.forEach(char => {
     if(char == "1") {
         output = output + ":one:"
     }
@@ -38,4 +47,14 @@ str.forEach(char => {
         output= output + ":regional_indicator_" + char.toLowerCase() + ":"
     }
 })
-console.log(output)
+//console.log(output)
+        send: true,
+        result: output
+      })
+    });
+  }
+
+  pluginWillUnload () {
+    powercord.api.commands.unregisterCommand('mock');
+  }
+};
