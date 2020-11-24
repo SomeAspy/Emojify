@@ -8,7 +8,7 @@ module.exports = class Emojify extends Plugin {
       description: 'Emojify Text',
       usage: '{c} [text to emojify]',
       executor: (args) => ({
-        args = args.split("")
+        args = args.split(""),
         args.forEach(char => {
             if(char == "1") {output = output + ":one:"} //will eventually updated switch case
                 else if(char == "2") {output = output + ":two:"}
@@ -21,7 +21,7 @@ module.exports = class Emojify extends Plugin {
                 else if(char == "9") {output = output + ":nine:"}
                 else if(char == " ") {output = output + " "}
                 else if (isNaN(parseInt(char))){output= output + ":regional_indicator_" + char.toLowerCase() + ":"}
-            })
+            }),
         send: true,
         result: output
       })
