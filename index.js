@@ -1,4 +1,5 @@
 const { Plugin } = require('powercord/entities');
+var output = ""
 
 module.exports = class Emojify extends Plugin {
   startPlugin () {
@@ -10,7 +11,6 @@ module.exports = class Emojify extends Plugin {
         //var args = "test one two THREE 98778"
 args = args.split("")
 //console.log(args)
-var output = ""
 args.forEach(char => {
     if(char == "1") {
         output = output + ":one:"
