@@ -22,7 +22,7 @@ module.exports = class Emojify extends Plugin {
                 else if(char == "8") {output += ":eight:"}
                 else if(char == "9") {output += ":nine:"}
                 else if(char == " ") {output += " "} //needs more spacing, but discord yeets it.
-                else if (isNaN(parseInt(char))){output += 1	`:regional_indicator_${char.toLowerCase()}:`}
+                else if (isNaN(parseInt(char))){output += `:regional_indicator_${char.toLowerCase()}:`}
                 else(console.log("invalid character!"))
             });
       return{
