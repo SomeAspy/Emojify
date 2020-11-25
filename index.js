@@ -25,7 +25,7 @@ module.exports = class Emojify extends Plugin {
               case " ": output += " ";        break
               case "#": output += ":hash:";   break
               case "|": output += ":clock6:"; break
-              case "'": output += ":clock12:"; break
+              case "'": //applies below code
               case "`": output += ":clock12:"; break
               case ",": output += ":clock630:"; break
               case "~": output += ":wavy_dash"; break
