@@ -23,7 +23,7 @@ module.exports = class Emojify extends Plugin {
               case "8": output += ":eight:";  break
               case "9": output += ":nine:";   break
               case " ": output += " ";        break
-              case "!": output += ":grey_explanation:"; break
+              case "!": output += ":grey_exclamation:"; break
               default: output += `:regional_indicator_${char.toLowerCase()}:`
             }
             });
