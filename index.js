@@ -11,19 +11,20 @@ module.exports = class Emojify extends Plugin {
         output = ""
         args = args.join(" ").split("")
         args.forEach(char => {
-            if(char == "1") {output += ":one:"} //will eventually updated switch case
-                else if(char == "0") {output += ":zero:"}
-                else if(char == "2") {output += ":two:"}
-                else if(char == "3") {output += ":three:"}
-                else if(char == "4") {output += ":four:"}
-                else if(char == "5") {output += ":five:"}
-                else if(char == "6") {output += ":six:"}
-                else if(char == "7") {output += ":seven:"}
-                else if(char == "8") {output += ":eight:"}
-                else if(char == "9") {output += ":nine:"}
-                else if(char == " ") {output += " "} //needs more spacing, but discord yeets it.
-                else if (isNaN(parseInt(char))){output += `:regional_indicator_${char.toLowerCase()}:`}
-                else(console.log("invalid character!"))
+            switch(char){
+              case "0": output += ":zero:";   break
+              case "1": output += ":one:";    break
+              case "2": output += ":two:";    break
+              case "3": output += ":three:";  break
+              case "4": output += ":four:";   break
+              case "5": output += ":five:";   break
+              case "6": output += ":six:";    break
+              case "7": output += ":seven:";  break
+              case "8": output += ":eight:";  break
+              case "9": output += ":nine:";   break
+              case " ": output += " ";        break
+              default: output += `:regional_indicator_${char.toLowerCase()}:`
+            }
             });
       return{
         send: true,
