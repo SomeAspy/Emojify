@@ -1,6 +1,7 @@
 const { Plugin } = require('powercord/entities');
 var output = ""
 
+
 module.exports = class Emojify extends Plugin {
   startPlugin () {
     powercord.api.commands.registerCommand({
@@ -8,7 +9,8 @@ module.exports = class Emojify extends Plugin {
       description: 'Emojify Text',
       usage: '{c} [text to emojify]',
       executor: (args) => {
-        args = args.join(" ").split("");
+        output = ""
+        args = args.join(" ").split("")
         args.forEach(char => {
             if(char == "1") {output += ":one:"} //will eventually updated switch case
                 else if(char == "0") {output += ":zero:"}
@@ -21,13 +23,16 @@ module.exports = class Emojify extends Plugin {
                 else if(char == "8") {output += ":eight:"}
                 else if(char == "9") {output += ":nine:"}
                 else if(char == " ") {output += " "}
+                
                 else if (isNaN(parseInt(char))){output += ":regional_indicator_" + char.toLowerCase() + ":"}
                 else(console.log("invalid character!"))
-            }),
+            });
+      return{
         send: true,
         result: output
       }
-    });
+      }
+    })
   }
 
   pluginWillUnload () {
