@@ -39,7 +39,7 @@ module.exports = class Emojify extends Plugin {
               case "*": out += ":asterisk:"; break
               case "!": out += ":grey_exclamation:"; break
               case "?": out += ":grey_question:"; break
-              default: char.match(/[a-z]|[A-Z]/) ? out += `:regional_indicator_${char.toLowerCase()}:` : console.log("invalid character!")
+              default: char.match(/[a-zA-Z]/) ? out += `:regional_indicator_${char.toLowerCase()}:` : console.log("invalid character!")
             }
           });
       return{
