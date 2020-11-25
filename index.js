@@ -1,6 +1,5 @@
 const { Plugin } = require('powercord/entities');
 let output = ""
-
 module.exports = class Emojify extends Plugin {
   startPlugin () {
     powercord.api.commands.registerCommand({
