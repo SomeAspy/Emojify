@@ -8,7 +8,7 @@ module.exports = class Emojify extends Plugin {
       description: 'Emojify Text',
       usage: '{c} [text to emojify]',
       executor: (args) => ({
-        args = args.join(" ").split("")
+        args = args.join(" ").split(""),
         args.forEach(char => {
             if(char == "1") {output = output + ":one:"} //will eventually updated switch case
                 else if(char == "2") {output = output + ":two:"}
