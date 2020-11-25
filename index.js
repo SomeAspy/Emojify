@@ -25,12 +25,11 @@ module.exports = class Emojify extends Plugin {
               case " ": output += " ";        break
               case "#": output += ":hash:";   break
               case "|": output += ":clock6:"; break
-              case "'": //applies below code
-              case "`": output += ":clock12:"; break
+              case "'": case "`": output += ":clock12:"; break
               case ",": output += ":clock630:"; break
               case "~": output += ":wavy_dash"; break
               case "-": output += ":no_entry:"; break
-              case "/": output += ":probing_cane"; break
+              case "/": output += ":probing_cane:"; break
               case "(": output += ":waning_crescent_moon:"; break
               case ")": output += ":waxing_crescent_moon:"; break
               case "$": output += ":heavy_dollar_sign:"; break
@@ -41,7 +40,7 @@ module.exports = class Emojify extends Plugin {
               case "*": output += ":asterisk:"; break
               case "!": output += ":grey_exclamation:"; break
               case "?": output += ":grey_question:"; break
-              default: output += `:regional_indicator_${char.toLowerCase()}:`
+              default: char.match(/[a-z]|[A-Z]/) ? output += `:regional_indicator_${char.toLowerCase()}:` : console.log("invalid character!")
             }
             });
       return{
