@@ -42,6 +42,7 @@ module.exports = class Emojify extends Plugin {
               default: char.match(/[a-zA-Z]/) ? out += `:regional_indicator_${char.toLowerCase()}:` : console.log("invalid character!")
             }
           });
+          if(out==""){console.log("What the fuck are you trying to do sending a blank message??")}
       return{
         send: true,
         result: out
